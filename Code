@@ -1,0 +1,44 @@
+String mes []={"Enero", "Febrero", "Marzo", "Abril", 
+"Mayo", "Junio", "Julio", "Agosto", "Septiembre",   
+};
+
+
+int cervezas []={
+  50, 8, 20, 20, 
+30, 12, 4, 20, 3,  
+};
+
+int salidas[]={
+  3, 8, 8, 4, 10, 6, 8, 14, 2
+  
+};
+
+PFont mifuente;
+
+void setup (){
+  size (800,800);
+  background (0);
+  noStroke ();
+  mifuente= loadFont("SansSerif-15.vlw");
+  textFont(mifuente,15);
+  smooth (1);
+}
+
+void draw (){
+  for (int dato = 0; dato<9; dato=dato+1) {
+   fill (#ffffff);
+    text("Cervezas por mes vs. salidas", 350, 20); 
+   //en el texto para el valor x ubico el texto con la variable del aumento del dato
+   fill (#ffffff);
+   text(mes[dato], 5, 30+(dato*50));
+   fill (#ffcc00);
+   rect(100, 18+(dato*50), cervezas[dato], 14);
+   fill (#ffffff);
+   text (cervezas[dato],110 +cervezas[dato], 30+(dato*50) );
+   fill (#ffffff);
+   text (salidas[dato],110 +salidas[dato], 49+(dato*50) );
+   fill (#003698);
+   rect(100, 36+(dato*50), salidas[dato], 14);
+
+  }
+}
